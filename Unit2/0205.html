@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>不同时间段显示不同的问候语</title>
+		<!-- 
+		每天上午8点之前(不包含8点 显示"早上好!")
+		每天上午12点之前(包含8点但不包含12点)显示"上午好!"
+		每天12-14点(包含12点但不包含14点)显示"中午好!"
+		每天14-17点(包含14点但不包含17点)显示"下午好!"
+		每天17点后(包含17点)显示"晚上好!"
+		-->
+		<!-- 使用if...else if...else即可 -->
+		<script type="text/javascript">
+			<!--
+				var today,hour;
+				today = new Date();//创建时间对象
+				hour = today.getHours();
+				if(hour < 8){
+					document.write("早上好!");
+					}
+					else if(hour < 12){
+						document.write("上午好!");
+					}else if(hour < 14){
+						document.write("中午好!");
+					}else if(hour < 17){
+						document.write("下午好!");
+					}else{
+					document.write("晚上好!");
+					}
+			//-->
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

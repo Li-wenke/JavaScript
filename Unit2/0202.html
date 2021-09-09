@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>采用多种方式显示当前的日期</title>
+		<!-- 第三种 -->
+		<script language="JavaScript" type="text/javascript">
+		<!--
+			var today,year,day;
+			today = new Date();
+			year = today.getFullYear();
+			day  = today.getDate();
+			var  isMonth = new Array("1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月");
+			var isDay = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+			document.write(year+"年"+isMonth[today.getMonth()]+day+"日&nbsp;&nbsp;&nbsp;&nbsp;" +isDay[today.getDay()]);
+			document.write("<br>");
+		//-->
+		
+		</script>
+	</head>
+	<body>
+		<!-- 第二种 -->
+		<span id="showtime">
+			<script>
+			var year="";
+			mydate = new Date();
+			mymonth = mydate.getMonth()+1;
+			myday = mydate.getDate();
+			myyear = mydate.getFullYear();
+			showtime.innerHTML = myyear+"年"+ mymonth +"月"+myday+"日&nbsp;&nbsp;&nbsp;&nbsp;星期" +"日一二三四五六".charAt(new Date().getDay());
+			</script>
+		</span>
+	</body>
+	<!-- 第一种 -->
+	<script>
+	<!--
+		document.write("<br>");
+		var year,month,day,tempdate;
+		tempdate = new Date();
+		year = tempdate.getFullYear();
+		month = tempdate.getMonth() + 1;
+		day = tempdate.getDate();
+		document.write(year+"年"+month+"月"+day+"日"+"&nbsp;&nbsp;&nbsp;&nbsp;");
+		var weekarray = new Array(7);
+		weekarray[0]="星期日";
+		weekarray[1]="星期一";
+		weekarray[2]="星期二";
+		weekarray[3]="星期三";
+		weekarray[4]="星期四";
+		weekarray[5]="星期五";
+		weekarray[6]="星期六";
+		weekday=tempdate.getDay();
+		document.write(weekarray[weekday]);
+	//-->
+	</script>
+	
+</html>

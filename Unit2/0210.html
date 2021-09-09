@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>实现限时抢购倒计时</title>
+		<script type="text/javascript">
+			function $(name){return document.getElementById(name);};
+			the_s=26*3600+458;
+			function view_time(objid){
+			  if(the_s>=0){
+				var the_D=Math.floor((the_s/3600)/24)
+				var the_H=Math.floor((the_s-the_D*24*3600)/3600);
+				var the_M=Math.floor((the_s-the_D*24*3600-the_H*3600)/60);
+				var the_S=(the_s-the_H*3600)%60;
+				html = "还剩：";
+				if(the_D!=0 || the_H!=0) html += '<span class="hour">'+(the_H+(the_D*24))+"</span>小时";
+				if(the_D!=0 || the_H!=0 || the_M!=0) html += '<span class="minute">'+the_M+"</span>分";
+				html += '<span class="second">'+the_S+"</span>秒";
+				$(objid).innerHTML = html;
+				the_s--;
+			  }else{
+				$(objid).innerHTML = "抢购已结束";
+			  }
+			}
+		</script>
+	</head>
+	<body>
+		<p>抢购倒计时</p>
+		<p class="time" id="time">
+			<script type="text/javascript">
+				setInterval('view_time("time")',1000);
+			</script>
+		</p>
+	</body>
+</html>
