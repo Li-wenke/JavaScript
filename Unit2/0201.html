@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>显示常规格式的当前日期与时间</title>
+		
+	</head>
+	<body>
+		<script type="text/javascript">
+			function tick(){
+				var date = new Date();
+				window.setTimeout("tick()",1000);
+				nowclock.innerHTML="当前日期和时间："+date.toLocaleString();
+			}
+			window.onload=function(){
+				tick();
+			}
+		</script>
+		<div id="nowclock">
+			<span class="red">
+				当前日期与时间:
+			</span>2018年01月01日00时00分00秒
+		</div>
+		<!-- <div id="showtime">
+			<script type="text/javascript">
+				setInterval("showtime.innerHTML='当前日期与时间:'+ new Date().toLocaleString()",1000);
+			</script>
+		</div> -->
+	</body>
+</html>

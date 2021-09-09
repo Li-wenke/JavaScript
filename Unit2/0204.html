@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>在特定日期的特定时段限时打折促销信息</title>
+		<script type="text/javascript">
+		//使用new Date(日期与时间字符串)创建自定义的日期
+		//使用if语句与if...else...语句的嵌套结构分别控制年、月和日期数,只在特定日期的特定时段在网页中输出打折促销的提示信息
+		var dq_now = new Date();//创建日期对象
+		var dq_year = dq_now.getFullYear();//具体日期年份
+		var dq_month = dq_now.getMonth()+1;//月份
+		var dq_day = dq_now.getDate();//日期 具体哪一日
+		var dq_houre = dq_now.getHours();//获取小时
+		var dq_min  = dq_now.getMinutes();//获取分钟
+		var dq_sec = dq_now.getSeconds();//获取秒数
+		var timeout=new Date(dq_year+"/"+dq_month+"/"+dq_day+" "+dq_houre+":"+dq_min+":"+dq_sec);
+		document.write("当前的日期为:"+timeout.toLocaleString());
+		if(dq_month == 5){
+			if(dq_day >= 1 && dq_day <= 5 || dq_day >= 25 && dq_day <= 31){
+				document.write("<br>"+"正在促销打折,请关注!");
+			}else{
+				document.write("<br />"+"促销打折暂未开始,留意!");
+			}
+		}else{
+			document.write("<br />"+"请关注促销活动!");
+		}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

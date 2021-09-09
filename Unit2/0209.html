@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>验证日期的有效性</title>
+	</head>
+	<body>
+		<form action="http://u.ctrip.com/union/UncoveredRedirect.aspx" method="post" id="form1" runat="server">
+			<div style="margin: 10px;">
+				城市&nbsp;<input type="text" id="txt_CityName" name ="txt_CityName" class="base_textbox" style="width: 75px;" value="上海" />
+				日期&nbsp;<input type="text" id="txt_Date" name="txt_Date" class="base_textbox" style="width: 60px;" />&nbsp;&nbsp;
+			</div>
+			<div>
+				<input type="button" value="提交" onclick="checkSubmit()" style="margin: 0px 0px 0px 80px; width: 60px;" />
+			</div>
+		</form>
+	</body>
+	<script language="javascript" type="text/javascript">
+	  var date=new Date()
+	  document.getElementById('txt_Date').value=date.getFullYear()+"-"+Math.abs(date.getMonth()+1)+"-"+date.getDate();
+	  function checkSubmit()
+	  {
+		 if(document.getElementById('txt_Date').value.replace(/(^\s*)|(\s*$)/g,"")=="")
+		   {
+			  alert('请输入入住日期！');
+			  document.getElementById('txt_Date').focus();
+			  return false;
+		   }
+		 
+		 
+		 if(document.getElementById('txt_Date').value.match(/^(\d{4})\-(\d{1,2})\-(\d{1,2})$/)==null) 
+		   {
+			  alert('请输入正确的入住日期！（yyyy-mm-dd）');
+			  document.getElementById('txt_Date').focus();
+			  return false;
+		   }
+		
+		  if(!verifyDate(document.getElementById('txt_Date').value))
+		  {
+			 alert('请输入正确的入住日期！（yyyy-mm-dd）');
+			 document.getElementById('txt_Date').focus();
+			 return false;
+		  }   
+		 document.getElementById('form1').submit();
+	  }
+	  
+	   function verifyDate(str) 
+	  { 
+		var y = parseInt(str.split("-")[0]); 
+		var m = parseInt(str.split("-")[1]); 
+		var d = parseInt(str.split("-")[2]); 
+		switch(m)
+		  { 
+			 case 1: 
+			 case 3: 
+			 case 5: 
+			 case 7: 
+			 case 8: 
+			 case 10: 
+			 case 12: 
+			    if(d>31){ 
+				    	  return false; 
+				}else{ 
+			    		  return true; 
+					} 
+			  break; 
+			case 2: 
+			  if((y%4==0 && d>29) || (y%4!=0 && d>28)){ 
+			     return false;  
+					}else{ 
+					  return true; 
+					} 
+					  break; 
+			 case 4: 
+			 case 6: 
+			 case 9: 
+			 case 11: 
+				  if(d>30){ 
+			           	  return false; 
+				}else{ 
+			        	  return true; 
+				} 
+				  break; 
+			 default: 
+				return false; 
+		  } 
+	  }
+	</script>
+</html>
