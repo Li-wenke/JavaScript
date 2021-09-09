@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- jQuery实现网页收藏 -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery实现网页收藏</title>
+		<script type="text/javascript" language="JavaScript" src="../jQuery.js" ></script>
+		<script type="text/javascript" language="JavaScript">
+			//加入收藏夹
+			$(document).ready(function(){
+				$("#favorite").click(function(){
+					if(window.ActiveXObject|| "ActiveXObject"in window){
+							window.external.addFavorite('http://www.baidu.com','百度')
+					}else{
+						alert('添加失败!\n 您可以尝试通过组合键【Ctrl + D】加入收藏夹~')
+					}
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<div id="topLinks">
+			<span> <a id="favorite" href="#">添加收藏</a> </span>
+		</div>
+	</body>
+</html>

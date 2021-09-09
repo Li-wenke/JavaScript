@@ -1,0 +1,15 @@
+div#proPanel div.proPanelCon1{
+	background: url(../images/x.jpg)
+				#00ff00 repeate-x left top;
+
+	width: 192px;
+	color: #fff;
+	float: right;
+}
+div#proPanel div.proPanelCon3{
+			background: url(../images/w.jpg)
+						#9edeff repeat-x left top;
+	width: 192px;
+	color: #013087;
+	float: left;
+}

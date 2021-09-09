@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>输入两个数字、运算符及四则运算</title>
+	<script type="text/javascript">
+					function account() {
+						//用户点击的是确认并且没输入;'' --点击取消并且没输入--null
+						try {
+							var n1 = prompt("请输入第一个数字", "") //计算值1
+							if (isNaN(n1)) {
+								throw "只能输入数字";
+							}
+							switch (n1) {
+								case "":
+									throw "不能为空";
+									break;
+								case null:
+									throw "不能为空";
+									break;
+								case undefined:
+									throw "不能为空";
+									break;
+							}
+							var n2 = prompt("请输入第二个数字", "") //计算值2
+							
+							if (isNaN(n2)) {
+								throw "只能输入数字";
+							}
+						
+							switch (n2) {
+								case "":
+									throw "不能为空";
+									break;
+								case null:
+									throw "不能为空";
+									break;
+								case undefined:
+									throw "不能为空";
+									break;
+							}
+		
+							var n3 = prompt("请输入运算符", "")
+							switch (n3) {
+								case "+":
+									result =parseInt(n1 ) + parseInt(n2) ;
+									break;
+								case "-":
+									result = n1 - n2;
+									break;
+								case "*":
+									result = n1 * n2;
+									break;
+								case "/":
+									result = n1 / n2;
+									break;
+							
+								default:
+									throw "运算符只能是+、-、*、/";
+									break;
+							}
+							var result;
+							n1 = parseInt(n1);
+							n2 = parseInt(n2);
+							alert("两位数计算结果为：" + n1 + n3 + n2 + "=" + result);
+						} catch (err) {
+							alert(err);
+						}
+					};
+	</script>
+</head>
+<body>
+    <input name="btn" type="button" value="开始哦!" onclick="account();">
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript" language="JavaScript">
+			var x = prompt("请输入第一个数字:");
+			var y = prompt("请输入第二个数字:");
+			var z = prompt("请输入运算符:");
+			var c;
+			try{
+				if(isNaN(x)){throw "不是数字"};
+				if(isNaN(y)){throw "不是数字"};
+			}catch(err){
+				//TODO handle the exception
+				alert(err);
+			}
+			switch(z){
+				case "+":
+						alert(c= x + y);
+						break;
+					
+					case "-":
+						alert(c = x-y);
+						break;
+						
+					case "*":
+						alert(c = x*y);
+						break;
+						
+					case "/":
+						alert(c = x/y);
+						break;
+						
+					default:
+						alert ("输入有误！！！") ;
+						break;
+			
+			}
+			/* function work(){
+				try
+				{
+					var x = document.getElementById("first").value;
+					var y = document.getElementById("scond").value;
+					var z = document.getElementById("Operator").value;
+					if(x == "")  throw "值为空!";
+					if(isNaN(x)) throw "不是数字!";
+					if(y == "")  throw "值为空!";
+					if(isNaN(y)) throw "不是数字!";
+					if(z == "")  throw "运算符空!";
+					if(z != "+" && z != "-" && z != "*" && z != "/")  throw "运算符错误!";
+					
+				}
+				catch(err)
+				{
+					var c = document.getElementById("mess");
+					c.innerHTML="错误:"+err+"。";
+				}
+			}
+			function mywork()
+			{
+				var x = document.getElementById("first").value;
+				var y = document.getElementById("scond").value;
+				var z = document.getElementById("Operator").value;
+				switch(y){
+					case "+":
+							z = x+y;
+							break;
+						
+						case "-":
+							z = x-y ;
+							break;
+							
+						case "*":
+							z = x*y ;
+							break;
+							
+						case "/":
+							z = x/y ;
+							break;
+							
+						default:
+							alert ("你呢输入有误！！！") ;
+							break;
+
+				}
+			} */
+		</script>
+		
+	</body>
+</html>
+ -->

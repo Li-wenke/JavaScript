@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>实现动态改变样式</title>
+		<link href="css/style1.css" type="text/css " rel="stylesheet" id="cssfile"/>
+		<script type="text/javascript">
+			function changestyle(name){
+				css=document.getElementById("cssfile");
+				css.href="css/"+name+".css";
+			}
+		</script>
+	</head>
+	<body>
+		<div id="proPanel">
+			<div class="proPanelCon1" style="height: 192px;" >
+			海蓝时见鲸
+			</div>
+			<div class="proPanelCon3" style="height: 192px;">
+			梦醒时见你
+			</div>
+		</div>
+		<div > Copyright&nbsp;©&nbsp;2019-2025
+		All Rights Reserved&nbsp;蝴蝶工作室 版权所有&nbsp;&nbsp;&nbsp;切换样式:
+		<span style="cursor: pointer" onclick ="changestyle('style1')">应用样式1</span>
+		&nbsp;&nbsp;&nbsp;
+		<span style="cursor: pointer" onclick ="changestyle('style2')">应用样式2</span>
+		</div>
+	</body>
+</html>

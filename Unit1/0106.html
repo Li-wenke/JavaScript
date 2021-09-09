@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>实现动态设置页面的宽度和高度</title>
+		<style type="text/css">
+			.w960{
+				width: 960px;
+				height: 600px;
+				border: 1px solid #99f;
+				background: #99f;
+			}
+			.w1200{
+				width: 1200px;
+				height: 800px;
+				border: 1px solid #fcf;
+				background: #fcf;
+			}
+		</style>
+		<script type="text/javascript" src="../jQuery.js"></script>
+		<script>
+		function windowMedia(){
+			var winWidth=(screen.width);
+			if(winWidth<=1024){
+				$("#content").addClass("w960");//追加样式
+				$("#content").removeClass("w1200");//移除样式
+				$("#content").text("960*600");//设置文本
+			}else{
+				$("#content").addClass("w1200");
+				$("#content").removeClass("w960");
+				$("#content").text("1200*800");
+			};
+		}
+		</script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				windowMedia();
+			});
+		</script>
+		<div id="content" style="text-align: center; margin-right: auto; margin-left: auto;">	</div>
+	</body>
+</html>
