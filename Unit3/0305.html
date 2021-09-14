@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>实现鼠标指针滑过动态改变现实内容及外观效果</title>
+		
+	</head>
+	<body>
+		<div style="background:#FFF; padding: 10px;" align="center">
+			<div class="changeList">
+				<div class="changeList-top"></div>
+				<dl>
+					<dt id="b1" style="display: none;" onmouseover="changebox(1);">
+						<p>网站公告.....</p>
+						<em><img src="images/shu1.gif" width="29" height="37"></em>
+					</dt>
+					<dd id="a1">
+						<h1><img src="images/shu1.gif" width="29" height="49"></h1>
+						<div class="changeListText">
+							<a href="" target="_blank">......</a>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt id="b2" onmouseover="changebox(2);">
+						<p>网页特效集锦...</p>
+						<em><img src="images/shu2.gif" width="29" height="37"></em>
+					</dt>
+					<dd id="a2" style="display: none;">
+						<h1><img src="inamges/shu1_2.gif" width="29" height="49"></h1>
+						<div class="changeListText">
+							<a href="" target="_blank">......</a>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt id="b3" onmouseover="changebox(3);">
+						<p>新闻列表滑过网页特效....</p>
+						<em><img src="images/shu3.gif" width="29" height="37"></em>
+					</dt>
+					<dd id="a3" style="display: none;">
+						<h1><img src="images/shu1_3.gif" width="29" height="49"></h1>
+						<div class="changeListText">
+							<a href="" target="_blank">......</a>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt id="b4" onmouseover="changebox(4);">
+						<p>鼠标滑过改变标签内容....</p>
+						<em><img src="images/shu4.gif" width="29" height="49"></em>
+					</dt>
+					<dd id="a4" style="display: none;">
+						<h1><img src="images/shu1_4.gif"width="29" height="49"></h1>
+						<div class="changeListText">
+							<a href="" target="_blank">......</a>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt id="b5" onmouseover="changebox(5);">
+						<p>仿腾讯新浪图片展示网页特效</p>
+						<em><img src="images/shu4.gif" width="29" height="37"></em>
+					</dt>
+					<dd id="a4" style="display: none;">
+						<h1><img src="images/shu1.gif" width="29" height="49"></h1>
+						<div class="changeListText">
+							<a href="" target="_blank">......</a>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt id="b5" onmouseover="changebox(5);">
+						<p>仿腾讯新浪图片展示网页特效</p>
+						<em><img src="images/shu5.gif" width="29" height="37"></em>
+					</dt>
+					<dd id="a5" style="display: none;">
+						<h1><img src="images/shu1_5.gif" width="29" height="49"></h1>
+						<div class="changeListText">
+							<a href=""target="_blank">.......</a>
+						</div>
+					</dd>
+				</dl>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		<!--
+			function changebox(n){
+				var i = 1;
+				while(true){
+					try{
+						document.getElementById("a"+i).style.display='none';
+						document.getElementById("b"+i).style.display='block';
+					}catch(e){
+						//TODO handle the exception
+						break;
+					}
+					i++;
+				}
+				document.getElementById("a"+n).style.display='none';
+				document.getElementById("b"+n).style.display='none';
+			}
+		//-->
+	</script>
+</html>

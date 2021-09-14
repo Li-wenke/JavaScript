@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>实现网站公告信息连续向上滚动</title>
+	</head>
+	<body>
+		<div id="ke_scllo">
+			<div id="ke_scllo1">
+				<ul>
+					<li>北京科e互联目前以工作室的形式为您提供优质的网站建设、网站制作、网站优化、网站设计服务，我们以客户的满意为目标、以客户的价值求生存。不怕繁琐，耐心与您沟通。</li>
+					<li>北京网站建设团队——科e互联！业务范围：网站建设、网站制作、网站改版、网页制作切图、公司活动推广制作；手机、平板UI设计；EDM邮件营销。我们的宗旨是把握网站建设中的细节，让细节赢得您的信赖。</li>
+					<li>以客户为中心，为客户提供最佳的用户体验，而不是达到我们自己的目标；我们拥有一支积极向上的青年团队，从网站建设需求、原型、网页设计等流程到网站上线，我们一直为您做出最佳的解决方案。</li>
+					<li>欢迎喜欢IT的朋友加入科e互联QQ群：47445401，一起分享最新的IT网站建设知识，我们为您分享大量的网站优化教程、网页制作教程、网页特效以及开源CMS网站建设教程等视频。</li>
+					<li>科e互联为广大IT前端爱好者提供高质量、高兼容网页特效代码集锦；让网站建设得心应手、网页制作炫丽点金；同时也为您提供了网站建设中遇到的bug解决技巧文章以及优秀的网站案例。欢迎大家一起分享！</li>
+					<li>我们知道您的时间非常宝贵，因此，在遇到问题时，您一定希望我们能及时的给出解决方案。我们不怕繁琐，为您在第一时间内细心解答。</li>
+				</ul>
+			</div>
+			<div id="ke_scllo2" class="tagsContent"></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var speed=120;
+		var fgDemo=document.getElementById("ke_scllo");
+		var fgDemo1=document.getElementById("ke_scllo1");
+		var fgDemo2=document.getElementById("ke_scllo2");
+		fgDemo2.innerHTML=fgDemo1.innerHTML;
+		function marquee1(){
+			if(fgDemo.scrollTop>=fgDemo2.offsetHeight){
+				fgDemo.scrollTop-=fgDemo1.offsetHeight;
+			}
+			else{
+				fgDemo.scrollTop++;
+			}
+		}
+		var myMar1=setInterval(marquee1,speed);
+		fgDemo.onmouseover=function(){clearInterval(myMar1);}
+		fgDemo.onmouseout=function(){myMar1=setInterval(marquee1.speed);}
+	</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>实现网页状态栏中的文字呈现打字效果</title>
+		<script type="text/javascript">
+			var msg="欢迎光临网页特效网";
+			var interval= 220;//间隔时间
+			var seq = 0;
+			function statuShow(){
+				len = msg.length;//字符长度
+				window.status=msg.substring(0,seq+1);
+				seq++;
+				if(seq >= len){
+					seq = 0;
+					window.status='';
+				}
+				window.setTimeout("statuShow();",interval);
+			}
+			statuShow();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

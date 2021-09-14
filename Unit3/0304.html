@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>实现网页文字滚动与等待交替效果</title>
+	</head>
+	<body>
+		<table height="24" border="0" cellspacing="0" cellpadding="0" align="center">
+			<tbody>
+			<tr>
+				<td width="275" background="images/">
+					<div id="mq" style="overflow: hidden; height: 24px; border: 2px solid #000000;background-color: #9EB0C8;" onmouseover=iScrollAmount=0 onmouseout="iScrollAmount=1">
+						<table class="ctl" cellspacing="0" cellpadding="0" width="275" border="0">
+							<tbody>
+								<tr><td><li>关于做好我省普通高等学校招生工作的通知</li></td></tr>
+								<tr><td><li>关于做好我省普通高等学校对口招生工作的通知</li></td></tr>
+								<tr><td><li>关于做好我省技能竞赛工作的通知</li></td></tr>
+								<tr><td><li>关于做好我省职称评定工作的通知</li></td></tr>
+							</tbody>
+						</table>
+					</div>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</body>
+	<script type="text/javascript">
+		<!--
+			var oMarquee = document.getElementById("mq");//滚动对象
+			var iLineHeight=24;	//单行高度,像素
+			var iLineCount = 4; //实际行数
+			var iScrollAmount = 1;//每次滚动高度,像素
+			function run(){
+				oMarquee.scrollTop+=iScrollAmount;
+				if(oMarquee.scrollTop == iLineCount * iLineHeight){
+					oMarquee.scrollTop=0;
+				}
+				if(oMarquee.scrollTop % iLineHeight==0){
+					window.setTimeout("run()",2000);
+				}else{
+					window.setTimeout("run()",50);
+				}
+			}
+			oMarquee.innerHTML+=oMarquee.innerHTML;
+			window.setTimeout("run()",2000);
+		//-->
+	</script>
+</html>

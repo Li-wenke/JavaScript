@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>实现文本围绕鼠标指针旋转</title>
+		<!-- 获取鼠标事件 document.onmousemove 调用mouseMove()-->
+		<!-- 函数mouseMove()首次清楚前一次的计时效果获取鼠标指针的位置然后调用函数round() -->
+		<!-- 函数round()通过调用函数setTimeout()函数,实现每隔一定时间改变文本位置,从而产生文本围绕鼠标指针位置旋转的效果 -->
+		<style>
+			.spanstyle
+			{
+				position: absolute; visibility: visible;
+				top: 50px;
+				font-size: 10pt;
+				font-family:"Verdana";
+				color: #FF0000;
+			}
+		</style>
+	</head>
+	<body>
+		<script language="JavaScript">
+		<!--  
+			var number=6;
+			var step=5;
+			var radius=50;
+			var x,y;
+			var timer;
+			var pi=Math.PI;
+			function round()
+			{
+				hudusu=step;
+				for(i=1;i<=number;i++)
+				{
+					var thisspan;
+					thisspan=eval("document.all.span"+(i)+".style;");
+					thisspan.posLeft=radius*Math.cos(hudusu*pi/180)+x;
+					thisspan.posTop=radius*Math.sin(hudusu*pi/180)+y;
+					hudusu=hudusu+360/number;
+				}
+				step=step+5;
+				timer=setTimeout("round()",50);
+			}
+			function mouseMove()
+			{
+				clearTimeout(timer);
+				x=event.clientX;
+				y=event.clientY;
+				round();
+			}
+			document.onmousemove=mouseMove;
+			for(i=1;i<=number;i++)
+			{
+				document.write("<span id='span"+(i)+"'class='spanstyle'>");
+				document.write("☆");
+				document.write("</span>");
+			}
+		//-->
+		</script>
+		
+	</body>
+</html>

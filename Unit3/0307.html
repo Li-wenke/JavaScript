@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery实现网站动态信息滚动与等待的交替效果</title>
+		<!-- 创建一个自定义函数,每隔5000ms调用一次函数 -->
+		<!-- 利用jQuery的animate()方法创建自定义动画,动画效果市场设置为1000ms -->
+		<!-- 每一次动态信息滚动完成时,将第3个及以后各个列表项添加到第一个列表项之前,这样已滚动过的列表项即被移到最后.同时重新设置滚动内容的top属性为0 -->
+		<script src="../jQuery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="banner01" style="float: left;width: 195px;">
+			<div class="l_news">
+				<div class="new_padding">
+					<div class="area_padding" id="areaTrends">
+						<ul class="list" id="trends" name="trends">
+							<li style="font-weight: bold;color: #000000;">银行汇款账号变更</li>
+							<li style="font-weight: bold;color: #FF0000">卡莉芙面膜分享心得 赢豪礼</li>
+							<li style="font-weight: bold;color: #000000;">狂欢大放价2折起 满再减</li>
+							<li style="font-weight: bold;color: #FF0000;">天天网容赝消费者喜爱网站</li>
+							<li style="font-weight: bold;color: #000000;">天天网防诈骗公告</li>
+							<li style="font-weight: bold;color: #ff0000;">韩妆集结号 全网五折封顶抢</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var trendsroll=function(){
+			var _w=$("#areaTrends").height(),_showbox_week=$("#trends");
+			_showbox_week.animate({top:"-="+ _w},1000,function(){
+				_showbox_week.find("li.first").before(_showbox_week.find("li:gt(2)"));
+				_showbox_week.css("top","0");
+			})
+		}
+		setInterval(trendsroll,5000);
+	</script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery实现循环滚动网页中的文字</title>
+		<script src="../jQuery.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.style1{
+				overflow: hidden;
+				top: 10px;
+				height: 130px;
+				width: 160px;
+				border: 2px solid #CCC;
+				padding: 5px;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="areatrends"class="style1">
+			<ul class="r_buysay_main" id="items">
+				<li id="recent4">人民邮电出版社</li>
+				<li id="recent3">高等教育出版社</li>
+				<li id="recent2">清华大学出版社</li>
+				<li id="recent1">电子工业出版社</li>
+				<li id="recent0">机械工业出版社</li>
+				<li id="recent8">水利水电出版社</li>
+				<li id="recent7">中国铁道出版社</li>
+				<li id="recent6">化学工业出版社</li>
+				<li id="recent5">科学出版社</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		//循环下拉
+		var delay=2000;
+		var count=9;
+		var showing=5;
+		var i=5;
+		function move(i)
+		{
+			$("#recent" + i).remove().hide().prependTo("#items");
+		}
+		function slide()
+		{
+			var toShow = (i + showing) % count;
+			$("#recent" + toShow).fadeIn(1000,move(i));
+			$("#recent" + i).fadeOut(1000,move(i));
+			i = ( i + 1) % count;
+			setTimeout("slide()",delay);
+		}
+		function setDisplay()
+		{
+			$("#items>li").each(function (index)
+			{
+				var obj = $(this);
+				if(index<4)
+				{
+					obj.css({display:"none"});
+				}
+			});
+		}
+		
+		$(function ()
+		{
+			setDisplay();
+			slide();
+		});
+	</script>
+</html>
